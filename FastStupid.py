@@ -1,5 +1,7 @@
 n = int(input())
 
+BewijsN = (n+1)/2
+
 List1 = []
 
 
@@ -53,5 +55,7 @@ while n > 1:
         if n == 1:
             List1.append(n)
 
-
+List1.sort()
 print(len(List1), List1)
+if len(List1)-1 <= BewijsN:
+    print(True, len(List1)-1, "<=", BewijsN)
