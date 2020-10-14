@@ -1,6 +1,6 @@
-n = int(input())
+n = int(input())  # kan tot 8 cijfers snel(<1min), na 8 traag
 
-BewijsN = (n+1)/2
+BewijsN = (n + 1) / 2
 
 List1 = []
 
@@ -36,9 +36,9 @@ while n > 1:
 
         if IsPrime(n):
             List1.append(n)
-            n += -1  # Prime to even number
+            n += -1  # Prim naar even
 
-        else:  # Odd number
+        else:  # Oneven
             List1.append(n)
             BigFactor = BigFactorCheck(n)
 
@@ -46,7 +46,7 @@ while n > 1:
                 x += 1
                 List1.append(n - BigFactor * x)
 
-            n = n - BigFactor * (x + 1)  # bad design
+            n = n - BigFactor * (x + 1)  # lelijk, maar werkt
 
     while IsEven(n):
         List1.append(n)
@@ -57,5 +57,5 @@ while n > 1:
 
 List1.sort()
 print(len(List1), List1)
-if len(List1)-1 <= BewijsN:
-    print(True, len(List1)-1, "<=", BewijsN)
+if len(List1) - 1 <= BewijsN:
+    print(True, len(List1) - 1, "<=", BewijsN)
