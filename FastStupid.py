@@ -2,7 +2,7 @@ n = int(input())  # kan tot 8 cijfers snel(<1min), na 8 traag
 
 BewijsN = (n + 1) / 2
 
-List1 = []
+List = []
 
 
 def IsEven(n):
@@ -35,27 +35,27 @@ while n > 1:
     if IsEven(n) == False:
 
         if IsPrime(n):
-            List1.append(n)
+            List.append(n)
             n += -1  # Prim naar even
 
         else:  # Oneven
-            List1.append(n)
+            List.append(n)
             BigFactor = BigFactorCheck(n)
 
             for x in range((n // BigFactor) - 2):
                 x += 1
-                List1.append(n - BigFactor * x)
+                List.append(n - BigFactor * x)
 
             n = n - BigFactor * (x + 1)  # lelijk, maar werkt
 
     while IsEven(n):
-        List1.append(n)
+        List.append(n)
         n = n // 2
 
         if n == 1:
-            List1.append(n)
+            List.append(n)
 
-List1.sort()
-print(len(List1), List1)
-if len(List1) - 1 <= BewijsN:
-    print(True, len(List1) - 1, "<=", BewijsN)
+List.sort()
+print(len(List), List)
+if len(List) - 1 <= BewijsN:
+    print(True, len(List) - 1, "<=", BewijsN)
