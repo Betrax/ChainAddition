@@ -54,7 +54,7 @@ def Main(n, List=[]):
     Print(List, BewijsN)
 
 
-n = int(input())  # kan tot 8 cijfers snel(<1min), na 8 trager
+n = int(input())  # kan tot 8 cijfers snel(<10 secs), na 8 trager (<1 min ??)
 
 List = Main(n)
 
