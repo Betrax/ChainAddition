@@ -1,3 +1,7 @@
+import time
+start_time = time.time()
+
+
 n = int(input())  # kan tot 8 cijfers snel(<1min), na 8 traag
 
 BewijsN = (n + 1) / 2
@@ -6,21 +10,11 @@ List = []
 
 
 def IsEven(n):
-    if n % 2 == 0:
-        return True
-
-    else:
-        return False
+    return n % 2 == 0
 
 
 def IsPrime(n):
-    for x in range(n - 2):
-        x += 2
-
-        if n % x == 0:
-            return False
-
-    return True
+    return all(n%x != 0 for x in range(3, n, 2))
 
 
 def BigFactorCheck(n):
@@ -59,3 +53,5 @@ List.sort()
 print(len(List), List)
 if len(List) - 1 <= BewijsN:
     print(True, len(List) - 1, "<=", BewijsN)
+
+print((time.time() - start_time), "secs")
