@@ -19,6 +19,13 @@ def BigFactorCheck(n):
             return n - x
 
 
+def Print(List, BewijsN):
+    List.sort()
+    print(len(List), List)
+    if len(List) - 1 <= BewijsN:
+        print(True, len(List) - 1, "<=", BewijsN)
+
+
 def Main(n, List=[]):
     BewijsN = (n + 1) / 2
 
@@ -44,11 +51,7 @@ def Main(n, List=[]):
 
             if n == 1:
                 List.append(n)
-
-    List.sort()
-    print(len(List), List)
-    if len(List) - 1 <= BewijsN:
-        print(True, len(List) - 1, "<=", BewijsN)
+    Print(List, BewijsN)
 
 
 n = int(input())  # kan tot 8 cijfers snel(<1min), na 8 traag
