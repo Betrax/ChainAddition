@@ -36,7 +36,7 @@ def Main(n, List=[]):
                 for x in range(1, (n // BigFactor) - 1):
                     List.append(n - BigFactor * x)
 
-                n = n - BigFactor * (x + 1)  # lelijk
+                n = n - BigFactor * (x + 1)  # lelijks
 
         while IsEven(n):
             List.append(n)
